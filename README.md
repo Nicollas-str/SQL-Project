@@ -6,5 +6,5 @@ Neste breve projeto com foco em colocar em prática os conhecimentos adiquiridos
 ## Dados
 As informações dos clientes deste banco estão distribuídas da seguinte maneira:
 
-
+![Print dados](https://github.com/Nicollas-str/SQL-Project/blob/main/print_dados.png)
 
