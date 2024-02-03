@@ -6,7 +6,9 @@ Neste breve projeto com foco em colocar em prática os conhecimentos adiquiridos
 ## Dados
 As informações dos clientes deste banco estão distribuídas da seguinte maneira:
 
-**Query:** select * from credito limit 10; 
+**Query:** 
+
+           select * from credito limit 10; 
 ![Print dados](https://github.com/Nicollas-str/SQL-Project/blob/main/print_dados.png)
 
 Tipos dos dados de cada coluna:
@@ -14,7 +16,7 @@ Tipos dos dados de cada coluna:
 **Query:** 
 
            DESCRIBE credito
-![Print-tipo-dado]()
+![Print-tipo-dado](https://github.com/Nicollas-str/SQL-Project/blob/main/print_tipodado.png)
 
 Com apenas duas querys para visualização dos dados notamos que temos dados nulos como por exemplo em escolaridade e estado civil.
 Será que a escolaridade ou estado civil tem alguma relação com o credito do usuário? Veremos!
@@ -25,7 +27,7 @@ Quantidade de pessoas para o respectivo salário anual:
 **Query:** 
 
            select count(*), salario_anual from credito group by salario_anual
-![Print-salário-anual]()
+![Print-salário-anual](https://github.com/Nicollas-str/SQL-Project/blob/main/print_salarioquantidade.png)
 
 Vemos que existe um equilibrio entre os salários até chegar em 120mil+ mostrando que existem bem menos pessoas com uma renda tão alta anualmente.
 
@@ -38,7 +40,7 @@ E sobre a escolaridade e o seu respectivo tipo de cartão?
            group by escolaridade, tipo_cartao, sexo 
            order by limite_credito desc 
            limit 10
-![Print-escolaridade-tipocartao]()
+![Print-escolaridade-tipocartao](https://github.com/Nicollas-str/SQL-Project/blob/main/print_tipocartao.png)
 Olhando apenas para essas linhas nota-se que tem sim uma separação por escolaridade, onde pessoas com altas graduações podem sim ter um cartão mais basico, porém pessoas com baixa escolaridade não possuem um cartão mais alto como platinum, mas vamos nos aprofundar um pouco mais nisso.
 
 **Query:** 
@@ -49,7 +51,7 @@ Olhando apenas para essas linhas nota-se que tem sim uma separação por escolar
            FROM credito
            GROUP BY escolaridade
            ORDER BY media_limite_credito DESC;
-![Print-escolaridade-limitecredito]()
+![Print-escolaridade-limitecredito](https://github.com/Nicollas-str/SQL-Project/blob/main/print_limite.png)
 
 Acima notamos que graduação está com a média mais alta de limite de crédito do que os demais, porém isso pode se dar por que existem bem mais pessoas graduadas do que as que possuem mestrado por exemplo.
 
@@ -58,7 +60,7 @@ Acima notamos que graduação está com a média mais alta de limite de crédito
            select max(valor_transacoes_12m) as maior_valor_gasto, avg(valor_transacoes_12m) as media_valor_gasto, min(valor_transacoes_12m) as min_valor_gasto, sexo 
            from credito 
            group by sexo
-![Print-escolaridade-gastamais]()
+![Print-escolaridade-gastamais](https://github.com/Nicollas-str/SQL-Project/blob/main/print_sexo.png)
 
 Aqui notamos que mulheres gastam pouca coisa a mais que homem, um valor quase que irrelevante.
 
@@ -72,7 +74,7 @@ Aqui notamos que mulheres gastam pouca coisa a mais que homem, um valor quase qu
            group by sexo, salario_anual 
            order by avg(valor_transacoes_12m) 
            desc
-![Print-escolaridade-limiteesalario]()  
+![Print-escolaridade-limiteesalario](https://github.com/Nicollas-str/SQL-Project/blob/main/print_medialimite.png)  
 Como avaliação final entendemos que sim, o salário impacta diretamente no limite do cartão, como vemos acima! Outra análise interessante que podemos ver sobre a query acima é que não existem mulheres com salários acima de 60 mil.
 
 ## Conclusão
